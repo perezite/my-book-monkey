@@ -1,0 +1,17 @@
+<div *ngIf="book">
+  <h1>{{ book.title }}</h1>
+  <h3 *ngIf="book.subtitle">{{ book.subtitle }}</h3>
+  <div class="ui divider"></div>
+  <div class="ui grid">
+    <div class="four wide column">
+      <h4>Autoren</h4>
+      <ng-container *ngFor="let author of book.authors">
+        {{ author }}
+      </ng-container>
+    </div>
+  </div>
+  <button class="ui red button" (click)="showBookList()">
+    Zurück zur Buchliste
+  </button>
+</div>
+
