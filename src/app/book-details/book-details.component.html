@@ -6,11 +6,27 @@
     <div class="four wide column">
       <h4>Autoren</h4>
       <ng-container *ngFor="let author of book.authors">
-        {{ author }}
+        {{ author }}<br>
       </ng-container>
     </div>
+    <div class="four wide column">
+      <h4>ISBN</h4>
+      {{ book.isbn }}
+    </div>
+    <div class="four wide column">
+      <h4>Erschienen</h4>
+      {{ book.published }}
+    </div>
+    <div class="four wide column" *ngIf="book.rating">
+      <h4>Rating</h4>
+      <i class="yellow star icon"
+        *ngFor="let r of getRating(book.rating)"></i>
+    </div>
   </div>
-  <button class="ui red button" (click)="showBookList()">
-    Zurück zur Buchliste
-  </button>
+  <h4>Beschreibung</h4>
+  <p>{{ book.description }}</p>
+  <div class="ui small images">
+    <img *ngFor="let thumbnail of book.thumbnails"
+      [src]="thumbnail.url">
+  </div>
 </div>
