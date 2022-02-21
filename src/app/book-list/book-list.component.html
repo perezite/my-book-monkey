@@ -1,5 +1,5 @@
 <div class="ui middle aligned selection divided list">
-  <a *ngFor="let b of books" class="item">
-    <bm-book-list-item [book]="b" [routerLink]="b.isbn"></bm-book-list-item>
-  </a>
+  <bm-book-list-item *ngFor="let b of books" [book]="b" [routerLink]="b.isbn" class="item"></bm-book-list-item>
+  <div *ngIf="!books" class="ui active dimmer"></div>
+  <p *ngIf="books && !books.length">Es wurden noch keine Bücher eingetragen.</p>
 </div>
