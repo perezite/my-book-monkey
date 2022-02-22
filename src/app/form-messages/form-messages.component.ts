@@ -23,7 +23,7 @@ export class FormMessagesComponent implements OnInit {
     published: {
       required: 'Es muss ein Erscheinungdatum angegeben werden.'
     },
-    author: {
+    authors: {
       required: 'Es muss ein Autor angegeben werden'
     }
   };

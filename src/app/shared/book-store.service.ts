@@ -51,6 +51,13 @@ export class BookStoreService {
       );
   }
 
+  update(book: Book): Observable<any> {
+    return this.http.put(`${this.api}/book/${book.isbn}`, book, { responseType: 'text' })
+      .pipe(
+        catchError(this.errorHandler)
+      );
+  }
+
   private errorHandler(error: HttpErrorResponse): Observable<any> {
     console.error('Fehler aufgetreten!');
     return throwError(error);
