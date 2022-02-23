@@ -55,7 +55,7 @@ export class BookFormComponent implements OnInit, OnChanges {
     const thumbnails = formValue.thumbnails.filter(thumbnail => thumbnail.url); // filter thumbnails without url
     const isbn = this.editing ? this.book.isbn : formValue.isbn;                // disabled isbn field is not present in edit mode
 
-    const newBook: Book = { ...formValue, authors, thumbnails };
+    const newBook: Book = { ...formValue, isbn, authors, thumbnails };
     this.submitBook.emit(newBook);
     this.bookForm.reset();
   }
