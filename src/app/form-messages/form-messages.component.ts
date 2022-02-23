@@ -13,18 +13,18 @@ export class FormMessagesComponent implements OnInit {
 
   private allMessages = {
     title: {
-      required: 'Ein Buchtitel muss angegeben werden'
+      required: 'Ein Buchtitel muss angegeben werden.'
     },
     isbn: {
-      required: 'Es muss eine ISBN angegeben werden',
-      minlength: 'Die ISBN muss mindestens 10 Zeichen haben.',
-      maxlength: 'Die ISBN darf höchstens 13 Zeichen haben.'
+      required: 'Es muss eine ISBN angegeben werden.',
+      isbnFormat: 'Die ISBN muss aus 10 oder 13 Zeichen bestehen.',
+      isbnExists: 'Die ISBN existiert bereits.'
     },
     published: {
       required: 'Es muss ein Erscheinungdatum angegeben werden.'
     },
     authors: {
-      required: 'Es muss ein Autor angegeben werden'
+      atLeastOneAuthor: 'Es muss ein Autor angegeben werden.'
     }
   };
 
