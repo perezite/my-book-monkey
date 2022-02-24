@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Book } from '../shared/book';
-import { BookExistsValidatorService as BookExistsValidatorService } from '../shared/book-exists-validator.service';
+import { Book } from '../../shared/book';
+import { Thumbnail } from '../../shared/thumbnail';
+import { BookExistsValidatorService } from '../shared/book-exists-validator.service';
 import { BookValidators } from '../shared/book-validators';
-import { Thumbnail } from '../shared/thumbnail';
 
 @Component({
   selector: 'bm-book-form',
