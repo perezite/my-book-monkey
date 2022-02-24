@@ -10,8 +10,6 @@ import { TokenInterceptor } from './shared/token.interceptor';
 import { registerLocaleData } from '@angular/common';
 
 import localeDe from '@angular/common/locales/de';
-import { BooksModule } from './books/books.module';
-import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,9 +20,7 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    BooksModule,
-    AdminModule
+    HttpClientModule
   ],
   providers: [
     {
