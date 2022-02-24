@@ -1,6 +1,6 @@
 <img [src]="book.thumbnails[0].url"
   *ngIf="book.thumbnails && book.thumbnails[0] && book.thumbnails[0].url"
-  class="ui tiny image">
+  class="ui tiny image" bmZoom>
 <div class="content">
   <div class="header">{{ book.title }}</div>
   <div *ngIf="book.subtitle" class="description">{{book.subtitle}}</div>
