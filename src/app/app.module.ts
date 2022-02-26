@@ -7,9 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { TokenInterceptor } from './shared/token.interceptor';
-import { registerLocaleData } from '@angular/common';
-
-import localeDe from '@angular/common/locales/de';
 
 @NgModule({
   declarations: [
@@ -27,13 +24,10 @@ import localeDe from '@angular/common/locales/de';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    },
-    { provide: LOCALE_ID, useValue: 'de' }
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    registerLocaleData(localeDe);
-  }
+  constructor() { }
 }

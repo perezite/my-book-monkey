@@ -14,11 +14,11 @@
   <input type="date" formControlName="published" useValueAsDate required>
   <bm-form-messages [control]="bookForm.get('published')" controlName="published"></bm-form-messages>
 
-  <label>Autoren</label>
-  <button type="button" class="ui mini button" (click)="addAuthorControl()">+ Autor</button>
+  <label i18n="@@BookFormComponent:book authors">Autoren</label>
+  <button type="button" i18n="@@BookFormComponent:add author" class="ui mini button" (click)="addAuthorControl()">+ Autor</button>
   <div class="fields" formArrayName="authors">
     <div class="sixteen wide field" *ngFor="let c of authors.controls; index as i">
-      <input placeholder="Autor" [formControlName]="i">
+      <input placeholder="Autor" i18n-placeholder="@@BookFormComponent:author placeholder " [formControlName]="i">
     </div>
   </div>
   <bm-form-messages [control]="bookForm.get('authors')" controlName="authors"></bm-form-messages>

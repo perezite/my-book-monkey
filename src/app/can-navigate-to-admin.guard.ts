@@ -10,7 +10,8 @@ export class CanNavigateToAdminGuard implements CanActivate {
 
   canActivate(): boolean {
     if (!this.accessGranted) {
-      this.accessGranted = window.confirm('Wollen Sie den Admin-Bereich betreten?');
+      const question = $localize`:@@CanNavigateToAdminGuard\:question:Wollen Sie den Admin-Bereich betreten?`;
+      this.accessGranted = window.confirm(question);
     }
 
     return this.accessGranted;
