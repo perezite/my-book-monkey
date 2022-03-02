@@ -11,7 +11,7 @@
       "start-de": "ng serve --prod",
       "start-en": "ng serve --configuration=production-en",
       "extract-i18n": "ng xi18n --format=xmb --outputPath=src",
-      "docker:build": "npm install && ng build --prod && docker build -t book-monkey .",
+      "docker:build": "docker build -t book-monkey .",
       "docker:re-deploy": "docker-compose down --remove-orphans && docker-compose up -d"
     },
     "private": true,
