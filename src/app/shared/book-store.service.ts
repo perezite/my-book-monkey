@@ -5,14 +5,17 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { Book } from './book';
 import { BookFactory } from './book-factory';
 import { BookRaw } from './book-raw';
+import { SettingsService } from './settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookStoreService {
-  private api = 'https://api4.angular-buch.com/secure';
+  private api: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private settingsService: SettingsService) {
+    this.api = this.settingsService.settings.apiUrl;
+  }
 
   getAllSearch(searchTerm: string): Observable<Book[]> {
     return this.http.get<BookRaw[]>(`${this.api}/books/search/${searchTerm}`)

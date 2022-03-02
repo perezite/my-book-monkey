@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { TokenInterceptor } from './shared/token.interceptor';
+import { SettingsInitializerService } from './shared/settings-initializer.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,14 @@ import { TokenInterceptor } from './shared/token.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (initService: SettingsInitializerService) => {
+        return () => initService.init();
+      },
+      deps: [SettingsInitializerService],
       multi: true
     }
   ],
